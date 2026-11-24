@@ -1,0 +1,370 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Ancient Greek Table</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: a deep Aegean hero with a meander band, then calm light sections on limestone; the pantry is a filterable grid where each item shows how often it was eaten. */
+:root {
+  --bg: #F2F4F2;
+  --surface: #FFFFFF;
+  --fg: #17252F;
+  --muted: #53636C;
+  --line: #D3DBD8;
+  --accent: #1D5B8C;
+  --olive: #5B6A1E;
+  --wine: #7A2335;
+  --key: #7FB2D8;
+  --hero-bg: #14476F;
+  --hero-fg: #F2F4F2;
+  --hero-muted: #BFD3E2;
+  --font-display: "Bellefair", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1B24; --surface: #162531; --fg: #E6ECEA; --muted: #9FB0B8; --line: #27394A;
+    --accent: #6FB1E0; --olive: #B5C25A; --wine: #E39AA8; --key: #3E7FAE;
+    --hero-bg: #0A2236; --hero-fg: #E6ECEA; --hero-muted: #9FB8CB;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1B24; --surface: #162531; --fg: #E6ECEA; --muted: #9FB0B8; --line: #27394A;
+  --accent: #6FB1E0; --olive: #B5C25A; --wine: #E39AA8; --key: #3E7FAE;
+  --hero-bg: #0A2236; --hero-fg: #E6ECEA; --hero-muted: #9FB8CB;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.12; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap {
+  max-width: 1040px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.defs path { stroke: var(--key); }
+.key { display: block; width: 100%; height: 20px; }
+
+/* hero */
+.hero {
+  background: var(--hero-bg); color: var(--hero-fg);
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+  padding-top: calc(env(safe-area-inset-top, 0px) + 3rem);
+}
+.hero .wrap { padding-bottom: 2.5rem; display: grid; gap: 1.1rem; }
+.eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--hero-muted); }
+.hero h1 { font-size: clamp(2.5rem, 8vw, 4.75rem); max-width: 14ch; }
+.hero .lede { font-size: 1.2rem; max-width: 52ch; color: var(--hero-muted); }
+.hero .lede strong { color: var(--hero-fg); font-weight: 600; }
+
+section { padding-block: 3.25rem; }
+section + section { border-top: 1px solid var(--line); }
+.head { display: grid; gap: .6rem; margin-bottom: 1.75rem; max-width: 62ch; }
+.head h2 { font-size: clamp(1.9rem, 5vw, 2.6rem); }
+.head p { color: var(--muted); }
+.label { font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+
+/* triad */
+.triad { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.triad > div { border-top: 3px solid var(--accent); padding-top: .9rem; display: grid; gap: .35rem; align-content: start; min-width: 0; }
+.triad > div:nth-child(2) { border-color: var(--olive); }
+.triad > div:nth-child(3) { border-color: var(--wine); }
+.greek { font-family: var(--font-display); font-size: 2.1rem; line-height: 1.1; }
+.tr { font-size: .85rem; color: var(--muted); font-style: italic; }
+.callout { margin-top: 2rem; padding: 1.1rem 1.25rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; max-width: 68ch; }
+.callout b { font-weight: 700; }
+
+/* day */
+.day { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.meal { display: grid; gap: .4rem; align-content: start; min-width: 0; }
+.meal .time { font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+.meal h3 { font-size: 1.9rem; }
+.after { margin-top: 1.75rem; color: var(--muted); max-width: 68ch; }
+.after b { color: var(--fg); }
+
+/* pantry */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.chip {
+  font: inherit; font-size: .92rem; cursor: pointer;
+  padding: .4rem .85rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+.chip:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 1rem 1.1rem; display: grid; gap: .4rem; align-content: start; min-width: 0; }
+.item h3 { font-size: 1.45rem; }
+.item .gk { font-size: .88rem; color: var(--muted); font-style: italic; }
+.item p { font-size: .95rem; }
+.freq { display: flex; align-items: center; gap: .35rem; font-size: .8rem; font-weight: 600; color: var(--olive); }
+.dots { display: inline-flex; gap: 3px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--olive); }
+.dots i.on { background: var(--olive); }
+.legend { margin-top: 1.25rem; color: var(--muted); font-size: .9rem; }
+
+/* places & absent */
+.two { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.two > div { display: grid; gap: .5rem; align-content: start; min-width: 0; }
+.two h3 { font-size: 1.6rem; }
+.absent { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+.absent span { border: 1px dashed var(--muted); border-radius: 999px; padding: .2rem .75rem; font-size: .92rem; color: var(--muted); text-decoration: line-through; text-decoration-color: var(--wine); }
+
+/* recipe */
+.recipe { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.recipe ul, .recipe ol { margin: 0; padding-left: 1.2rem; display: grid; gap: .4rem; }
+.recipe h3 { font-size: 1.5rem; margin-bottom: .6rem; }
+
+footer { background: var(--hero-bg); color: var(--hero-muted); margin-top: 1rem; }
+footer .wrap { padding-block: 1.75rem 2rem; display: grid; gap: .6rem; font-size: .92rem; }
+footer b { color: var(--hero-fg); font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) { .chip { transition: background .15s, border-color .15s; } }
+</style>
+
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="meander" width="24" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 18 H24 M3 18 V3 H21 V14 H9 V9 H15" fill="none" stroke-width="2" stroke-linecap="square"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Food in Classical Greece, about 500 to 300 BCE</div>
+    <h1>What the ancient Greeks ate</h1>
+    <p class="lede">Mostly <strong>barley, olives, wine, figs and cheese</strong>. Fish came from the sea when you lived near it, and meat was something you ate at a festival.</p>
+  </div>
+  <svg class="key" aria-hidden="true"><rect width="100%" height="20" fill="url(#meander)"/></svg>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div class="label">The short answer</div>
+      <h2>Three crops carried the whole diet</h2>
+      <p>Greek hillsides are thin and dry. Barley, olive trees and grapevines grow there anyway, and almost every meal was built from them.</p>
+    </div>
+    <div class="triad">
+      <div>
+        <div class="greek">σῖτος</div>
+        <div class="tr">sitos, grain</div>
+        <p>Barley first, wheat for those who could pay. Eaten as dough, flatbread, loaves and porridge.</p>
+      </div>
+      <div>
+        <div class="greek">ἔλαιον</div>
+        <div class="tr">elaion, olive oil</div>
+        <p>The main cooking fat, a dressing for greens and bread, and also lamp fuel and body lotion.</p>
+      </div>
+      <div>
+        <div class="greek">οἶνος</div>
+        <div class="tr">oinos, wine</div>
+        <p>Drunk daily by adults and almost always mixed with water. Neat wine was considered barbarian.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p>Greeks sorted a meal into two parts. <b>Sitos</b> was the grain base. <b>Opson</b> (ὄψον) was anything eaten with it: cheese, olives, vegetables, fish, and later any kind of meat. Fish was so loved that the word <i>opsophagos</i> came to mean a fish-lover.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div class="label">A day at the table</div>
+      <h2>Three meals, one big one</h2>
+      <p>Writers disagree on the names across the centuries, but the Classical Athenian pattern ran like this.</p>
+    </div>
+    <div class="day">
+      <div class="meal">
+        <div class="time">Morning</div>
+        <h3>ἀκράτισμα <span class="tr">akratisma</span></h3>
+        <p>Barley bread dipped in undiluted wine. Figs or olives on the side if there were any.</p>
+      </div>
+      <div class="meal">
+        <div class="time">Midday</div>
+        <h3>ἄριστον <span class="tr">ariston</span></h3>
+        <p>A quick, light meal. Bread or maza with cheese, olives or whatever was left from the night before.</p>
+      </div>
+      <div class="meal">
+        <div class="time">Evening</div>
+        <h3>δεῖπνον <span class="tr">deipnon</span></h3>
+        <p>The main meal. Grain with a relish such as lentil soup, boiled greens, salt fish or cheese, with watered wine.</p>
+      </div>
+    </div>
+    <p class="after">At a banquet the <b>symposium</b> followed dinner. The tables were cleared and guests drank mixed wine from a shared bowl while nibbling <i>tragemata</i>: roasted chickpeas, nuts, figs, cheese and honey cakes.</p>
+  </div>
+</section>
+
+<section id="pantry">
+  <div class="wrap">
+    <div class="head">
+      <div class="label">The pantry</div>
+      <h2>Foods, and how often an ordinary household ate them</h2>
+      <p>Filter by type. The dots show how common each food was for a typical family, not for the rich.</p>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter foods"></div>
+    <div class="grid" id="grid"></div>
+    <p class="legend">Four dots: eaten daily. Three: often. Two: occasionally. One: rarely, or only on special days.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div class="label">Who ate what, and where</div>
+      <h2>Wealth and place changed the plate</h2>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Meat came with ritual</h3>
+        <p>Animals were sacrificed to the gods at festivals, and the roasted meat was shared out among the crowd. For many people that was the only beef or pork they ate all month. Richer households added game birds, hare and imported luxuries such as dates.</p>
+      </div>
+      <div>
+        <h3>Sparta ate differently</h3>
+        <p>Spartan men took their meals together in common messes. A famous dish was the black broth (<i>melas zomos</i>), a pork stew with vinegar and salt that outsiders mocked as tasteless.</p>
+      </div>
+      <div>
+        <h3>The coast ate fish</h3>
+        <p>Port cities such as Athens had busy fish markets selling sardines, anchovies and tuna, much of it salted so it could travel inland. Farming villages in the hills leaned on cheese, beans and wild greens instead.</p>
+      </div>
+      <div>
+        <h3>Not yet on the table</h3>
+        <p>Tomatoes, potatoes, corn, peppers and chocolate came from the Americas after 1492. Cane sugar, coffee, lemons and oranges were also absent from the Classical diet.</p>
+        <div class="absent"><span>tomato</span><span>potato</span><span>corn</span><span>pepper</span><span>chocolate</span><span>sugar</span><span>coffee</span><span>lemon</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div class="label">Try it</div>
+      <h2>A Greek dinner you can make tonight</h2>
+      <p>Everything here was available in Classical Athens. Serves four.</p>
+    </div>
+    <div class="recipe">
+      <div>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>250 g brown or green lentils</li>
+          <li>1 onion and 3 cloves of garlic</li>
+          <li>3 tablespoons olive oil, plus extra to serve</li>
+          <li>1 tablespoon vinegar and a pinch of dried oregano</li>
+          <li>Barley flatbread or a crusty loaf</li>
+          <li>Sheep or goat cheese, olives, fresh or dried figs</li>
+          <li>A little honey</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Method</h3>
+        <ol>
+          <li>Simmer the lentils with the chopped onion and garlic in plenty of water for about 30 minutes, until soft and thick.</li>
+          <li>Stir in the olive oil, vinegar, oregano and salt.</li>
+          <li>Serve in bowls with bread for dipping.</li>
+          <li>Put cheese, olives and figs on the table as the opson, with a spoonful of honey over the figs.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <svg class="key" aria-hidden="true"><rect width="100%" height="20" fill="url(#meander)"/></svg>
+  <div class="wrap">
+    <p><b>How we know.</b> The picture comes from Athenaeus's <i>Deipnosophistae</i> (about 200 CE), the food poem of Archestratus of Gela (4th century BCE), Homer, Aristophanes' comedies, and archaeobotany, the study of ancient seeds and bones.</p>
+    <p>Most written evidence describes Athens and men with money. Village and household diets are mainly known from archaeology, so frequencies on this page are general estimates.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var GROUPS = [
+    ["grain", "Grain & legumes"],
+    ["veg", "Vegetables"],
+    ["fruit", "Fruit, nuts & olives"],
+    ["dairy", "Dairy & honey"],
+    ["fish", "Fish & meat"],
+    ["drink", "Drinks & flavour"]
+  ];
+  var FOODS = [
+    ["grain", "Barley", "κριθή, krithē", 4, "Ground into flour and mixed with water or oil to make maza, a dough eaten at nearly every meal. Hardier and cheaper than wheat."],
+    ["grain", "Wheat bread", "ἄρτος, artos", 3, "Preferred to barley and more expensive. Athens still had to import grain from the Black Sea and Egypt."],
+    ["grain", "Lentils", "φακῆ, phakē", 4, "Cheap, filling and eaten year-round, usually as a thick soup."],
+    ["grain", "Chickpeas and broad beans", "ἐρέβινθος, κύαμος", 3, "Boiled into soups, or roasted as a snack at drinking parties."],
+    ["veg", "Onions and garlic", "κρόμμυον, σκόροδον", 4, "Eaten raw or cooked into almost everything. Cheap and strongly flavoured."],
+    ["veg", "Wild greens", "ἄγρια λάχανα", 3, "Chicory, mallow and other greens gathered from fields and hillsides, boiled and dressed with olive oil."],
+    ["veg", "Cabbage, leeks, lettuce", "κράμβη, πράσον, θρίδαξ", 3, "Grown in household gardens along with celery, cucumbers and beets."],
+    ["fruit", "Olives and olive oil", "ἐλαία, ἔλαιον", 4, "Eaten whole and pressed for oil. Oil was the main fat in the Greek diet."],
+    ["fruit", "Figs", "σῦκον, sykon", 4, "Fresh in summer and dried for the rest of the year. Figs from Attica were famous."],
+    ["fruit", "Grapes and raisins", "σταφυλή", 3, "Eaten fresh in autumn, dried for winter, and of course turned into wine."],
+    ["fruit", "Pomegranates, apples, pears", "ῥόα, μῆλον, ἄπιον", 2, "Seasonal fruit, usually served as dessert after dinner."],
+    ["fruit", "Almonds and walnuts", "ἀμύγδαλον, κάρυον", 2, "Nibbles at the symposium, along with chestnuts."],
+    ["fruit", "Dates", "φοίνιξ", 1, "Imported from the east, so a luxury for the wealthy."],
+    ["dairy", "Sheep and goat cheese", "τυρός, tyros", 3, "Eaten fresh or aged. For many families cheese was the everyday source of protein."],
+    ["dairy", "Honey", "μέλι, meli", 3, "The only sweetener there was. Honey from Mount Hymettus near Athens was the most famous."],
+    ["dairy", "Eggs", "ᾠόν", 2, "Hen, quail and goose eggs."],
+    ["dairy", "Milk", "γάλα", 2, "Mostly turned into cheese or soured rather than drunk fresh."],
+    ["fish", "Sardines and anchovies", "σαρδίνη, ἀφύη", 3, "Cheap small fish, grilled, fried or salted. A staple of city markets."],
+    ["fish", "Eel, tuna, mullet", "ἐγχέλυς, θύννος, κεστρεύς", 2, "Larger fish cost more. Eels from Lake Copais in Boeotia were a delicacy."],
+    ["fish", "Octopus, squid, shellfish", "πολύπους, τευθίς", 2, "Common on the coast and in island cooking."],
+    ["fish", "Sausages", "ἀλλᾶς, allas", 2, "Street food. Aristophanes' comedy The Knights has a sausage-seller as its unlikely hero."],
+    ["fish", "Pork, lamb and goat", "χοίρειον, ἀρνεῖον", 1, "Mostly eaten at religious festivals, when the sacrificed animal was roasted and shared."],
+    ["fish", "Beef", "βοῦς", 1, "Cattle were costly working animals, so beef mostly came from sacrifices."],
+    ["fish", "Hare, thrushes, quail", "λαγώς, κίχλη, ὄρτυξ", 2, "Game for households that could afford it, often hunted or bought in the market."],
+    ["drink", "Wine, mixed with water", "οἶνος, oinos", 4, "Usually cut with more water than wine in a large mixing bowl called a krater. Neat wine marked a barbarian or a fool."],
+    ["drink", "Kykeon", "κυκεών", 3, "A drink of barley, water and herbs, sometimes with cheese. Also part of the Eleusinian Mysteries."],
+    ["drink", "Herbs, salt and vinegar", "ὄριγανον, ἅλς, ὄξος", 4, "Oregano, thyme, coriander and mint, with salt and vinegar, were the everyday seasonings."],
+    ["drink", "Garos", "γάρος", 2, "A salty fermented fish sauce used to season fish and vegetables."],
+    ["drink", "Silphium", "σίλφιον", 1, "A prized resin from Cyrene in North Africa used as seasoning and medicine. It was harvested until it probably died out."]
+  ];
+  var FREQ = ["", "Rarely", "Occasionally", "Often", "Daily"];
+  var active = "all";
+  var chips = document.getElementById("chips");
+  var grid = document.getElementById("grid");
+
+  function dots(n) {
+    var s = "";
+    for (var i = 1; i <= 4; i++) s += '<i class="' + (i <= n ? "on" : "") + '"></i>';
+    return '<span class="dots" aria-hidden="true">' + s + "</span>";
+  }
+  function renderGrid() {
+    var out = "";
+    FOODS.forEach(function (f) {
+      if (active !== "all" && f[0] !== active) return;
+      out += '<article class="item"><h3>' + f[1] + '</h3><div class="gk">' + f[2] + '</div>' +
+        '<div class="freq" aria-label="Eaten ' + FREQ[f[3]].toLowerCase() + '">' + dots(f[3]) + FREQ[f[3]] + '</div>' +
+        '<p>' + f[4] + '</p></article>';
+    });
+    grid.innerHTML = out;
+  }
+  function renderChips() {
+    var all = [["all", "All"]].concat(GROUPS);
+    chips.innerHTML = "";
+    all.forEach(function (g) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.textContent = g[1];
+      b.setAttribute("aria-pressed", String(g[0] === active));
+      b.addEventListener("click", function () {
+        active = g[0];
+        renderChips();
+        renderGrid();
+      });
+      chips.appendChild(b);
+    });
+  }
+  renderChips();
+  renderGrid();
+})();
+</script>
+
+</body></html>
